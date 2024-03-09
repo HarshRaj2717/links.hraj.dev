@@ -1,0 +1,26 @@
+---
+import { getPageMeta } from "../lib/seo";
+import {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  SITE_URL,
+} from "../config";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+
+const { meta } = getPageMeta({
+  title: title || SITE_TITLE,
+  description: description || SITE_DESCRIPTION,
+  baseUrl: SITE_URL,
+});
+---
+
+<!-- Primary Meta Tags -->
+<title>{meta.title}</title>
+<meta name="title" content={meta.title} />
+{meta.description && <meta name="description" content={meta.description} />}

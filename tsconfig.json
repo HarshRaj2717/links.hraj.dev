@@ -1,0 +1,10 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "display": "theme/bubblegum",
+  "compilerOptions": {
+    "types": ["astro/client"],
+    "baseUrl": ".",
+    "ignoreDeprecations": "5.0",
+    "verbatimModuleSyntax": true
+  }
+}
